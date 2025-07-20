@@ -91,7 +91,7 @@ local function show_table_popup(tbl)
   vim.api.nvim_buf_set_option(buf, 'swapfile', false)
 
   local width = math.min(70, vim.o.columns - 4)
-  local height = math.min(#lines, vim.o.lines - 4)
+  local height = math.min(math.max(#lines, 1), vim.o.lines - 4)
   local row = math.floor((vim.o.lines - height) / 2)
   local col = math.floor((vim.o.columns - width) / 2)
 
